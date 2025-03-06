@@ -64,22 +64,22 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[url('/bg1.jpg')] bg-cover flex flex-col items-center justify-center">
-      <h1 className="lg:text-4xl text-xl font-bold my-6 text-white">
+    <div className="min-h-screen bg-[url('/bg1.jpg')] lg:bg-cover bg-center flex flex-col items-center justify-center">
+      <h1 className="lg:text-4xl text-lg font-bold mt-6 text-white">
         Movie Search
       </h1>
       <Search onSearch={handleSearch} />
       {loading && <p className="text-blue-500">Loading...</p>}
-      {error && <p className="text-red-500">{error}</p>}
+      {error && <p className="bg-red-800 p-2 text-sm rounded-full text-white">{error}</p>}
       <div className="grid grid-cols-2 p-6 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:p-12">
         {movies.map((movie) => (
-          <div key={movie.imdbID} onClick={() => setSelectedMovie(movie)} className="bg-white shadow-md p-6 rounded-lg hover:shadow-xl cursor-pointer transition">
+          <div key={movie.imdbID} onClick={() => setSelectedMovie(movie)} className="bg-white shadow-md p-2 lg:p-6 py-6 rounded-tr-full hover:shadow-xl cursor-pointer transition">
             <img
               src={movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/200"}
               alt={movie.Title}
-              className="w-full h-64 object-cover rounded-md mb-4"
+              className="w-full lg:h-64 h-44 object-cover rounded-md mb-4"
             />
-            <p className="mt-2 font-semibold text-sm text-center">
+            <p className="mt-2 font-semibold text-xs lg:text-sm text-center">
               {movie.Title} <br/> ({movie.Year})
             </p>
           </div>

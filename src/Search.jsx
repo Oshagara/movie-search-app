@@ -11,7 +11,7 @@ const Search = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex justify-center w-2/3 items-center my-6">
+    <div className="flex justify-center lg:w-2/3 w-5/6 items-center my-6">
       <form 
         onSubmit={handleSubmit} 
         className="flex w-full bg-white shadow-lg rounded-full overflow-hidden"
@@ -21,12 +21,12 @@ const Search = ({ onSearch }) => {
           placeholder="Search for movies..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full p-2 px-4 text-gray-700 outline-none"
+          className="w-full p-2 text-sm lg:text-lg px-4 text-gray-700 outline-none"
           required
         />
         <button 
           type="submit" 
-          className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-r-full hover:bg-blue-700 transition"
+          className="px-6 py-2 bg-blue-600 text-white lg:font-semibold rounded-r-full hover:bg-blue-700 transition"
         >
           Search
         </button>
