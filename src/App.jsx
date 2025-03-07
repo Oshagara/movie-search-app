@@ -25,7 +25,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=${apiKey}&s=${query}`
+        `https://www.omdbapi.com/?apikey=${apiKey}&s=${query}`
       );
 
       if (!response.ok) {
